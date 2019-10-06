@@ -4,15 +4,18 @@
 # or whitespace (' ').
 
 class EmailAddressParser
-  attr_accessor :email_addresses
+  attr_accessor :emails
   
   def initialize(email_addresses)
-    @parser = email_addresses
+    @emails = email_addresses
   end
   
-  def parse(email_addresses)
-    email_addresses.parse(",")
+  def parse
+    @emails.split(", ")
   end
+
 end
 
-parser = EmailAddressParser.new("john@doe.com, person@somewhere.org")
+email_addresses = "john@doe.com, person@somewhere.org"
+parser = EmailAddressParser.new(email_addresses)
+parser.parse
