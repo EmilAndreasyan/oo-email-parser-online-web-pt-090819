@@ -9,6 +9,10 @@ class EmailAddressParser
   def initialize(email_addresses)
     @parser = email_addresses
   end
+  
+  def parse(email_addresses)
+    email_addresses.parse(",")
+  end
 end
 
-parser = EmailAddressParser.new(email_addresses)
+parser = EmailAddressParser.new("john@doe.com, person@somewhere.org")
